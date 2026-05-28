@@ -1,0 +1,127 @@
+[2026-05-28T15:50:04.673+0000] {processor.py:186} INFO - Started process (PID=32) to work on /opt/airflow/dags/skin_cancer_pipeline.py
+[2026-05-28T15:50:04.674+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/skin_cancer_pipeline.py for tasks to queue
+[2026-05-28T15:50:04.676+0000] {logging_mixin.py:190} INFO - [2026-05-28T15:50:04.676+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/skin_cancer_pipeline.py
+[2026-05-28T15:50:04.694+0000] {processor.py:925} INFO - DAG(s) 'skin_cancer_training_pipeline' retrieved from /opt/airflow/dags/skin_cancer_pipeline.py
+[2026-05-28T15:50:04.944+0000] {logging_mixin.py:190} INFO - [2026-05-28T15:50:04.943+0000] {override.py:1912} INFO - Created Permission View: can read on DAG:skin_cancer_training_pipeline
+[2026-05-28T15:50:04.979+0000] {logging_mixin.py:190} INFO - [2026-05-28T15:50:04.978+0000] {override.py:1912} INFO - Created Permission View: can delete on DAG:skin_cancer_training_pipeline
+[2026-05-28T15:50:05.002+0000] {logging_mixin.py:190} INFO - [2026-05-28T15:50:05.001+0000] {override.py:1912} INFO - Created Permission View: can edit on DAG:skin_cancer_training_pipeline
+[2026-05-28T15:50:05.048+0000] {logging_mixin.py:190} INFO - [2026-05-28T15:50:05.047+0000] {override.py:1912} INFO - Created Permission View: can read on DAG Run:skin_cancer_training_pipeline
+[2026-05-28T15:50:05.090+0000] {logging_mixin.py:190} INFO - [2026-05-28T15:50:05.089+0000] {override.py:1912} INFO - Created Permission View: can delete on DAG Run:skin_cancer_training_pipeline
+[2026-05-28T15:50:05.122+0000] {logging_mixin.py:190} INFO - [2026-05-28T15:50:05.122+0000] {override.py:1912} INFO - Created Permission View: can create on DAG Run:skin_cancer_training_pipeline
+[2026-05-28T15:50:05.155+0000] {logging_mixin.py:190} INFO - [2026-05-28T15:50:05.154+0000] {override.py:1912} INFO - Created Permission View: menu access on DAG Run:skin_cancer_training_pipeline
+[2026-05-28T15:50:05.155+0000] {logging_mixin.py:190} INFO - [2026-05-28T15:50:05.155+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-05-28T15:50:05.168+0000] {logging_mixin.py:190} INFO - [2026-05-28T15:50:05.168+0000] {dag.py:3262} INFO - Creating ORM DAG for skin_cancer_training_pipeline
+[2026-05-28T15:50:05.169+0000] {logging_mixin.py:190} INFO - [2026-05-28T15:50:05.169+0000] {dag.py:4180} INFO - Setting next_dagrun for skin_cancer_training_pipeline to None, run_after=None
+[2026-05-28T15:50:05.210+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/skin_cancer_pipeline.py took 0.544 seconds
+[2026-05-28T15:50:36.226+0000] {processor.py:186} INFO - Started process (PID=33) to work on /opt/airflow/dags/skin_cancer_pipeline.py
+[2026-05-28T15:50:36.227+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/skin_cancer_pipeline.py for tasks to queue
+[2026-05-28T15:50:36.230+0000] {logging_mixin.py:190} INFO - [2026-05-28T15:50:36.229+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/skin_cancer_pipeline.py
+[2026-05-28T15:50:36.243+0000] {processor.py:925} INFO - DAG(s) 'skin_cancer_training_pipeline' retrieved from /opt/airflow/dags/skin_cancer_pipeline.py
+[2026-05-28T15:50:36.276+0000] {logging_mixin.py:190} INFO - [2026-05-28T15:50:36.276+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-05-28T15:50:36.292+0000] {logging_mixin.py:190} INFO - [2026-05-28T15:50:36.291+0000] {dag.py:4180} INFO - Setting next_dagrun for skin_cancer_training_pipeline to None, run_after=None
+[2026-05-28T15:50:36.340+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/skin_cancer_pipeline.py took 0.121 seconds
+[2026-05-28T15:51:06.831+0000] {processor.py:186} INFO - Started process (PID=34) to work on /opt/airflow/dags/skin_cancer_pipeline.py
+[2026-05-28T15:51:06.832+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/skin_cancer_pipeline.py for tasks to queue
+[2026-05-28T15:51:06.839+0000] {logging_mixin.py:190} INFO - [2026-05-28T15:51:06.839+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/skin_cancer_pipeline.py
+[2026-05-28T15:51:06.853+0000] {processor.py:925} INFO - DAG(s) 'skin_cancer_training_pipeline' retrieved from /opt/airflow/dags/skin_cancer_pipeline.py
+[2026-05-28T15:51:06.883+0000] {logging_mixin.py:190} INFO - [2026-05-28T15:51:06.882+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-05-28T15:51:06.896+0000] {logging_mixin.py:190} INFO - [2026-05-28T15:51:06.896+0000] {dag.py:4180} INFO - Setting next_dagrun for skin_cancer_training_pipeline to None, run_after=None
+[2026-05-28T15:51:06.944+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/skin_cancer_pipeline.py took 0.120 seconds
+[2026-05-28T15:54:22.571+0000] {processor.py:186} INFO - Started process (PID=77) to work on /opt/airflow/dags/skin_cancer_pipeline.py
+[2026-05-28T15:54:22.572+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/skin_cancer_pipeline.py for tasks to queue
+[2026-05-28T15:54:22.573+0000] {logging_mixin.py:190} INFO - [2026-05-28T15:54:22.573+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/skin_cancer_pipeline.py
+[2026-05-28T15:54:22.583+0000] {processor.py:925} INFO - DAG(s) 'skin_cancer_training_pipeline' retrieved from /opt/airflow/dags/skin_cancer_pipeline.py
+[2026-05-28T15:54:22.608+0000] {logging_mixin.py:190} INFO - [2026-05-28T15:54:22.608+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-05-28T15:54:22.620+0000] {logging_mixin.py:190} INFO - [2026-05-28T15:54:22.619+0000] {dag.py:4180} INFO - Setting next_dagrun for skin_cancer_training_pipeline to None, run_after=None
+[2026-05-28T15:54:22.657+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/skin_cancer_pipeline.py took 0.091 seconds
+[2026-05-28T15:54:57.979+0000] {processor.py:186} INFO - Started process (PID=308) to work on /opt/airflow/dags/skin_cancer_pipeline.py
+[2026-05-28T15:54:57.980+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/skin_cancer_pipeline.py for tasks to queue
+[2026-05-28T15:54:57.982+0000] {logging_mixin.py:190} INFO - [2026-05-28T15:54:57.982+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/skin_cancer_pipeline.py
+[2026-05-28T15:54:57.993+0000] {processor.py:925} INFO - DAG(s) 'skin_cancer_training_pipeline' retrieved from /opt/airflow/dags/skin_cancer_pipeline.py
+[2026-05-28T15:54:58.019+0000] {logging_mixin.py:190} INFO - [2026-05-28T15:54:58.019+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-05-28T15:54:58.033+0000] {logging_mixin.py:190} INFO - [2026-05-28T15:54:58.033+0000] {dag.py:4180} INFO - Setting next_dagrun for skin_cancer_training_pipeline to None, run_after=None
+[2026-05-28T15:54:58.070+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/skin_cancer_pipeline.py took 0.099 seconds
+[2026-05-28T15:55:28.448+0000] {processor.py:186} INFO - Started process (PID=309) to work on /opt/airflow/dags/skin_cancer_pipeline.py
+[2026-05-28T15:55:28.449+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/skin_cancer_pipeline.py for tasks to queue
+[2026-05-28T15:55:28.450+0000] {logging_mixin.py:190} INFO - [2026-05-28T15:55:28.450+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/skin_cancer_pipeline.py
+[2026-05-28T15:55:28.460+0000] {processor.py:925} INFO - DAG(s) 'skin_cancer_training_pipeline' retrieved from /opt/airflow/dags/skin_cancer_pipeline.py
+[2026-05-28T15:55:28.486+0000] {logging_mixin.py:190} INFO - [2026-05-28T15:55:28.486+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-05-28T15:55:28.500+0000] {logging_mixin.py:190} INFO - [2026-05-28T15:55:28.499+0000] {dag.py:4180} INFO - Setting next_dagrun for skin_cancer_training_pipeline to None, run_after=None
+[2026-05-28T15:55:28.560+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/skin_cancer_pipeline.py took 0.118 seconds
+[2026-05-28T15:55:59.292+0000] {processor.py:186} INFO - Started process (PID=310) to work on /opt/airflow/dags/skin_cancer_pipeline.py
+[2026-05-28T15:55:59.293+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/skin_cancer_pipeline.py for tasks to queue
+[2026-05-28T15:55:59.294+0000] {logging_mixin.py:190} INFO - [2026-05-28T15:55:59.294+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/skin_cancer_pipeline.py
+[2026-05-28T15:55:59.305+0000] {processor.py:925} INFO - DAG(s) 'skin_cancer_training_pipeline' retrieved from /opt/airflow/dags/skin_cancer_pipeline.py
+[2026-05-28T15:55:59.336+0000] {logging_mixin.py:190} INFO - [2026-05-28T15:55:59.335+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-05-28T15:55:59.349+0000] {logging_mixin.py:190} INFO - [2026-05-28T15:55:59.349+0000] {dag.py:4180} INFO - Setting next_dagrun for skin_cancer_training_pipeline to None, run_after=None
+[2026-05-28T15:55:59.392+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/skin_cancer_pipeline.py took 0.106 seconds
+[2026-05-28T15:56:29.509+0000] {processor.py:186} INFO - Started process (PID=311) to work on /opt/airflow/dags/skin_cancer_pipeline.py
+[2026-05-28T15:56:29.510+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/skin_cancer_pipeline.py for tasks to queue
+[2026-05-28T15:56:29.511+0000] {logging_mixin.py:190} INFO - [2026-05-28T15:56:29.511+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/skin_cancer_pipeline.py
+[2026-05-28T15:56:29.524+0000] {processor.py:925} INFO - DAG(s) 'skin_cancer_training_pipeline' retrieved from /opt/airflow/dags/skin_cancer_pipeline.py
+[2026-05-28T15:56:29.548+0000] {logging_mixin.py:190} INFO - [2026-05-28T15:56:29.548+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-05-28T15:56:29.564+0000] {logging_mixin.py:190} INFO - [2026-05-28T15:56:29.563+0000] {dag.py:4180} INFO - Setting next_dagrun for skin_cancer_training_pipeline to None, run_after=None
+[2026-05-28T15:56:29.626+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/skin_cancer_pipeline.py took 0.122 seconds
+[2026-05-28T15:57:00.775+0000] {processor.py:186} INFO - Started process (PID=312) to work on /opt/airflow/dags/skin_cancer_pipeline.py
+[2026-05-28T15:57:00.776+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/skin_cancer_pipeline.py for tasks to queue
+[2026-05-28T15:57:00.777+0000] {logging_mixin.py:190} INFO - [2026-05-28T15:57:00.777+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/skin_cancer_pipeline.py
+[2026-05-28T15:57:00.790+0000] {processor.py:925} INFO - DAG(s) 'skin_cancer_training_pipeline' retrieved from /opt/airflow/dags/skin_cancer_pipeline.py
+[2026-05-28T15:57:00.815+0000] {logging_mixin.py:190} INFO - [2026-05-28T15:57:00.815+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-05-28T15:57:00.827+0000] {logging_mixin.py:190} INFO - [2026-05-28T15:57:00.827+0000] {dag.py:4180} INFO - Setting next_dagrun for skin_cancer_training_pipeline to None, run_after=None
+[2026-05-28T15:57:00.876+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/skin_cancer_pipeline.py took 0.107 seconds
+[2026-05-28T15:57:31.603+0000] {processor.py:186} INFO - Started process (PID=313) to work on /opt/airflow/dags/skin_cancer_pipeline.py
+[2026-05-28T15:57:31.605+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/skin_cancer_pipeline.py for tasks to queue
+[2026-05-28T15:57:31.606+0000] {logging_mixin.py:190} INFO - [2026-05-28T15:57:31.606+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/skin_cancer_pipeline.py
+[2026-05-28T15:57:31.618+0000] {processor.py:925} INFO - DAG(s) 'skin_cancer_training_pipeline' retrieved from /opt/airflow/dags/skin_cancer_pipeline.py
+[2026-05-28T15:57:31.646+0000] {logging_mixin.py:190} INFO - [2026-05-28T15:57:31.645+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-05-28T15:57:31.658+0000] {logging_mixin.py:190} INFO - [2026-05-28T15:57:31.657+0000] {dag.py:4180} INFO - Setting next_dagrun for skin_cancer_training_pipeline to None, run_after=None
+[2026-05-28T15:57:31.698+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/skin_cancer_pipeline.py took 0.101 seconds
+[2026-05-28T15:58:02.288+0000] {processor.py:186} INFO - Started process (PID=314) to work on /opt/airflow/dags/skin_cancer_pipeline.py
+[2026-05-28T15:58:02.289+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/skin_cancer_pipeline.py for tasks to queue
+[2026-05-28T15:58:02.290+0000] {logging_mixin.py:190} INFO - [2026-05-28T15:58:02.290+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/skin_cancer_pipeline.py
+[2026-05-28T15:58:02.301+0000] {processor.py:925} INFO - DAG(s) 'skin_cancer_training_pipeline' retrieved from /opt/airflow/dags/skin_cancer_pipeline.py
+[2026-05-28T15:58:02.326+0000] {logging_mixin.py:190} INFO - [2026-05-28T15:58:02.326+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-05-28T15:58:02.339+0000] {logging_mixin.py:190} INFO - [2026-05-28T15:58:02.338+0000] {dag.py:4180} INFO - Setting next_dagrun for skin_cancer_training_pipeline to None, run_after=None
+[2026-05-28T15:58:02.378+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/skin_cancer_pipeline.py took 0.095 seconds
+[2026-05-28T15:58:33.165+0000] {processor.py:186} INFO - Started process (PID=315) to work on /opt/airflow/dags/skin_cancer_pipeline.py
+[2026-05-28T15:58:33.166+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/skin_cancer_pipeline.py for tasks to queue
+[2026-05-28T15:58:33.167+0000] {logging_mixin.py:190} INFO - [2026-05-28T15:58:33.167+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/skin_cancer_pipeline.py
+[2026-05-28T15:58:33.180+0000] {processor.py:925} INFO - DAG(s) 'skin_cancer_training_pipeline' retrieved from /opt/airflow/dags/skin_cancer_pipeline.py
+[2026-05-28T15:58:33.208+0000] {logging_mixin.py:190} INFO - [2026-05-28T15:58:33.208+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-05-28T15:58:33.221+0000] {logging_mixin.py:190} INFO - [2026-05-28T15:58:33.221+0000] {dag.py:4180} INFO - Setting next_dagrun for skin_cancer_training_pipeline to None, run_after=None
+[2026-05-28T15:58:33.259+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/skin_cancer_pipeline.py took 0.100 seconds
+[2026-05-28T15:59:03.769+0000] {processor.py:186} INFO - Started process (PID=316) to work on /opt/airflow/dags/skin_cancer_pipeline.py
+[2026-05-28T15:59:03.770+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/skin_cancer_pipeline.py for tasks to queue
+[2026-05-28T15:59:03.771+0000] {logging_mixin.py:190} INFO - [2026-05-28T15:59:03.771+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/skin_cancer_pipeline.py
+[2026-05-28T15:59:03.781+0000] {processor.py:925} INFO - DAG(s) 'skin_cancer_training_pipeline' retrieved from /opt/airflow/dags/skin_cancer_pipeline.py
+[2026-05-28T15:59:03.807+0000] {logging_mixin.py:190} INFO - [2026-05-28T15:59:03.807+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-05-28T15:59:03.819+0000] {logging_mixin.py:190} INFO - [2026-05-28T15:59:03.819+0000] {dag.py:4180} INFO - Setting next_dagrun for skin_cancer_training_pipeline to None, run_after=None
+[2026-05-28T15:59:03.871+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/skin_cancer_pipeline.py took 0.108 seconds
+[2026-05-28T15:59:34.085+0000] {processor.py:186} INFO - Started process (PID=317) to work on /opt/airflow/dags/skin_cancer_pipeline.py
+[2026-05-28T15:59:34.087+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/skin_cancer_pipeline.py for tasks to queue
+[2026-05-28T15:59:34.088+0000] {logging_mixin.py:190} INFO - [2026-05-28T15:59:34.088+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/skin_cancer_pipeline.py
+[2026-05-28T15:59:34.098+0000] {processor.py:925} INFO - DAG(s) 'skin_cancer_training_pipeline' retrieved from /opt/airflow/dags/skin_cancer_pipeline.py
+[2026-05-28T15:59:34.125+0000] {logging_mixin.py:190} INFO - [2026-05-28T15:59:34.124+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-05-28T15:59:34.136+0000] {logging_mixin.py:190} INFO - [2026-05-28T15:59:34.136+0000] {dag.py:4180} INFO - Setting next_dagrun for skin_cancer_training_pipeline to None, run_after=None
+[2026-05-28T15:59:34.203+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/skin_cancer_pipeline.py took 0.124 seconds
+[2026-05-28T15:59:55.089+0000] {processor.py:186} INFO - Started process (PID=32) to work on /opt/airflow/dags/skin_cancer_pipeline.py
+[2026-05-28T15:59:55.090+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/skin_cancer_pipeline.py for tasks to queue
+[2026-05-28T15:59:55.092+0000] {logging_mixin.py:190} INFO - [2026-05-28T15:59:55.092+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/skin_cancer_pipeline.py
+[2026-05-28T15:59:55.110+0000] {processor.py:925} INFO - DAG(s) 'skin_cancer_training_pipeline' retrieved from /opt/airflow/dags/skin_cancer_pipeline.py
+[2026-05-28T15:59:55.147+0000] {logging_mixin.py:190} INFO - [2026-05-28T15:59:55.147+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-05-28T15:59:55.163+0000] {logging_mixin.py:190} INFO - [2026-05-28T15:59:55.162+0000] {dag.py:4180} INFO - Setting next_dagrun for skin_cancer_training_pipeline to None, run_after=None
+[2026-05-28T15:59:55.223+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/skin_cancer_pipeline.py took 0.140 seconds
+[2026-05-28T16:00:25.391+0000] {processor.py:186} INFO - Started process (PID=33) to work on /opt/airflow/dags/skin_cancer_pipeline.py
+[2026-05-28T16:00:25.393+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/skin_cancer_pipeline.py for tasks to queue
+[2026-05-28T16:00:25.395+0000] {logging_mixin.py:190} INFO - [2026-05-28T16:00:25.395+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/skin_cancer_pipeline.py
+[2026-05-28T16:00:25.410+0000] {processor.py:925} INFO - DAG(s) 'skin_cancer_training_pipeline' retrieved from /opt/airflow/dags/skin_cancer_pipeline.py
+[2026-05-28T16:00:25.440+0000] {logging_mixin.py:190} INFO - [2026-05-28T16:00:25.439+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-05-28T16:00:25.453+0000] {logging_mixin.py:190} INFO - [2026-05-28T16:00:25.453+0000] {dag.py:4180} INFO - Setting next_dagrun for skin_cancer_training_pipeline to None, run_after=None
+[2026-05-28T16:00:25.491+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/skin_cancer_pipeline.py took 0.107 seconds
+[2026-05-28T16:00:56.270+0000] {processor.py:186} INFO - Started process (PID=34) to work on /opt/airflow/dags/skin_cancer_pipeline.py
+[2026-05-28T16:00:56.271+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/skin_cancer_pipeline.py for tasks to queue
+[2026-05-28T16:00:56.276+0000] {logging_mixin.py:190} INFO - [2026-05-28T16:00:56.276+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/skin_cancer_pipeline.py
+[2026-05-28T16:00:56.290+0000] {processor.py:925} INFO - DAG(s) 'skin_cancer_training_pipeline' retrieved from /opt/airflow/dags/skin_cancer_pipeline.py
+[2026-05-28T16:00:56.321+0000] {logging_mixin.py:190} INFO - [2026-05-28T16:00:56.320+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-05-28T16:00:56.336+0000] {logging_mixin.py:190} INFO - [2026-05-28T16:00:56.336+0000] {dag.py:4180} INFO - Setting next_dagrun for skin_cancer_training_pipeline to None, run_after=None
+[2026-05-28T16:00:56.387+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/skin_cancer_pipeline.py took 0.122 seconds

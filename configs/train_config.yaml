@@ -1,0 +1,65 @@
+project_name: "HAM10000 Skin Cancer Classification"
+seed: 42
+
+paths:
+  raw_dir: "data/raw"
+  interim_dir: "data/interim"
+  processed_dir: "data/processed"
+  metadata_file: "data/raw/HAM10000_metadata.csv"
+  model_dir: "models"
+  report_dir: "reports"
+  best_model_path: "models/best_model.pth"
+
+labels:
+  label_names: ["akiec", "bcc", "bkl", "df", "mel", "nv", "vasc"]
+  malignant_labels: ["akiec", "bcc", "mel"]
+
+data:
+  image_size: 224
+  test_size: 0.15
+  val_size: 0.15
+  num_workers: 4
+  pin_memory: true
+  image_extensions: [".jpg", ".jpeg", ".png"]
+
+model:
+  name: "efficientnet_b0"   # efficientnet_b0 or efficientnet_b3
+  pretrained: true
+  num_classes: 7
+
+training:
+  epochs: 20
+  batch_size: 32
+  mixed_precision: true
+  early_stopping_patience: 5
+  monitor_metric: "macro_f1"
+  device: "auto"
+  save_best_only: true
+
+optimizer:
+  name: "adamw"
+  learning_rate: 0.0001
+  weight_decay: 0.0001
+
+scheduler:
+  name: "cosine"            # cosine or none
+
+loss:
+  name: "focal_loss"        # focal_loss or cross_entropy
+  gamma: 2.0
+  alpha: "balanced"         # balanced or null
+
+mlflow:
+  enabled: true
+  tracking_uri: "mlruns"
+  experiment_name: "ham10000-efficientnet"
+
+augmentation:
+  horizontal_flip_p: 0.5
+  vertical_flip_p: 0.2
+  rotate_limit: 20
+  brightness_contrast_p: 0.4
+  shift_scale_rotate_p: 0.4
+
+inference:
+  top_k: 3

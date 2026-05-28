@@ -1,0 +1,7 @@
+# Optional MLOps dependencies.
+# Install this only after the core project works.
+# Recommended for Windows: Python 3.10 or 3.11.
+
+-r requirements.txt
+ray[tune]>=2.9.0
+optuna>=3.6.0

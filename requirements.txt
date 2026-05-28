@@ -1,0 +1,21 @@
+# Core training dependencies.
+# Ray and Airflow are intentionally NOT here.
+# Install optional MLOps tools from requirements-mlops.txt only when needed.
+
+torch>=2.2.0
+torchvision>=0.17.0
+timm>=0.9.16
+
+pandas>=2.2.0
+numpy>=1.26.0
+scikit-learn>=1.4.0
+pyarrow>=15.0.0
+opencv-python-headless>=4.9.0
+Pillow>=10.2.0
+tqdm>=4.66.0
+PyYAML>=6.0.1
+
+albumentations>=1.4.0
+mlflow>=2.10.0
+protobuf>=5.26.1,<6.0.0dev
+matplotlib>=3.8.0

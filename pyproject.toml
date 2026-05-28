@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "skin-cancer-classification"
+version = "0.1.0"
+description = "Production-style HAM10000 skin cancer classification pipeline using EfficientNet, Focal Loss, MLflow and optional Ray/Airflow/FastAPI."
+readme = "README.md"
+requires-python = ">=3.10,<3.14"
+authors = [{ name = "Your Name" }]
+
+[project.optional-dependencies]
+serving = [
+    "fastapi>=0.110.0",
+    "uvicorn[standard]>=0.27.0",
+    "python-multipart>=0.0.9",
+    "pydantic>=2.6.0",
+]
+mlops = [
+    "ray[tune]>=2.9.0",
+]
+dev = [
+    "pytest>=8.0.0",
+    "ruff>=0.3.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+src = ["src", "tests", "serving", "mlops"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+ignore = ["E501"]

@@ -1,0 +1,156 @@
+[2026-05-28T15:50:04.540+0000] {manager.py:483} INFO - Processing files using up to 1 processes at a time 
+[2026-05-28T15:50:04.541+0000] {manager.py:484} INFO - Process each file at most once every 30 seconds
+[2026-05-28T15:50:04.541+0000] {manager.py:485} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2026-05-28T15:50:04.542+0000] {manager.py:821} INFO - Searching for files in /opt/airflow/dags
+[2026-05-28T15:50:04.554+0000] {manager.py:824} INFO - There are 1 files in /opt/airflow/dags
+[2026-05-28T15:50:05.260+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                  PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+-----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/skin_cancer_pipeline.py                           1           0  0.61s           2026-05-28T15:50:05                      43
+================================================================================
+[2026-05-28T15:50:36.414+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                  PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+-----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/skin_cancer_pipeline.py                           1           0  0.20s           2026-05-28T15:50:36                      10
+================================================================================
+[2026-05-28T15:51:07.018+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                  PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+-----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/skin_cancer_pipeline.py                           1           0  0.20s           2026-05-28T15:51:07                      10
+================================================================================
+[2026-05-28T15:54:22.297+0000] {manager.py:465} INFO - Exiting gracefully upon receiving signal 15
+[2026-05-28T15:54:22.474+0000] {manager.py:483} INFO - Processing files using up to 1 processes at a time 
+[2026-05-28T15:54:22.475+0000] {manager.py:484} INFO - Process each file at most once every 30 seconds
+[2026-05-28T15:54:22.475+0000] {manager.py:485} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2026-05-28T15:54:22.476+0000] {manager.py:821} INFO - Searching for files in /opt/airflow/dags
+[2026-05-28T15:54:22.489+0000] {manager.py:824} INFO - There are 1 files in /opt/airflow/dags
+[2026-05-28T15:54:22.665+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                  PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+-----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/skin_cancer_pipeline.py                           1           0  0.11s           2026-05-28T15:54:22                      10
+================================================================================
+[2026-05-28T15:54:58.166+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                  PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+-----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/skin_cancer_pipeline.py                           1           0  0.21s           2026-05-28T15:54:58                      10
+================================================================================
+[2026-05-28T15:55:28.636+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                  PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+-----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/skin_cancer_pipeline.py                           1           0  0.20s           2026-05-28T15:55:28                      10
+================================================================================
+[2026-05-28T15:55:59.480+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                  PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+-----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/skin_cancer_pipeline.py                           1           0  0.20s           2026-05-28T15:55:59                      10
+================================================================================
+[2026-05-28T15:56:29.697+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                  PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+-----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/skin_cancer_pipeline.py                           1           0  0.20s           2026-05-28T15:56:29                      10
+================================================================================
+[2026-05-28T15:57:00.963+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                  PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+-----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/skin_cancer_pipeline.py                           1           0  0.20s           2026-05-28T15:57:00                      10
+================================================================================
+[2026-05-28T15:57:30.965+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                  PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+-----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/skin_cancer_pipeline.py                           1           0  0.20s           2026-05-28T15:57:00                      10
+================================================================================
+[2026-05-28T15:58:01.199+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                  PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+-----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/skin_cancer_pipeline.py                           1           0  0.20s           2026-05-28T15:57:31                      10
+================================================================================
+[2026-05-28T15:58:31.386+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                  PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+-----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/skin_cancer_pipeline.py                           1           0  0.20s           2026-05-28T15:58:02                      10
+================================================================================
+[2026-05-28T15:59:01.612+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                  PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+-----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/skin_cancer_pipeline.py                           1           0  0.20s           2026-05-28T15:58:33                      10
+================================================================================
+[2026-05-28T15:59:22.737+0000] {manager.py:821} INFO - Searching for files in /opt/airflow/dags
+[2026-05-28T15:59:22.748+0000] {manager.py:824} INFO - There are 1 files in /opt/airflow/dags
+[2026-05-28T15:59:31.890+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                  PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+-----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/skin_cancer_pipeline.py                           1           0  0.20s           2026-05-28T15:59:03                      10
+================================================================================
+[2026-05-28T15:59:41.828+0000] {manager.py:465} INFO - Exiting gracefully upon receiving signal 15
+[2026-05-28T15:59:54.986+0000] {manager.py:483} INFO - Processing files using up to 1 processes at a time 
+[2026-05-28T15:59:54.986+0000] {manager.py:484} INFO - Process each file at most once every 30 seconds
+[2026-05-28T15:59:54.987+0000] {manager.py:485} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2026-05-28T15:59:54.988+0000] {manager.py:821} INFO - Searching for files in /opt/airflow/dags
+[2026-05-28T15:59:55.003+0000] {manager.py:824} INFO - There are 1 files in /opt/airflow/dags
+[2026-05-28T15:59:55.278+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                  PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+-----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/skin_cancer_pipeline.py                           1           0  0.20s           2026-05-28T15:59:55                      10
+================================================================================
+[2026-05-28T16:00:25.578+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                  PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+-----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/skin_cancer_pipeline.py                           1           0  0.20s           2026-05-28T16:00:25                      10
+================================================================================
+[2026-05-28T16:00:56.459+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                  PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+-----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/skin_cancer_pipeline.py                           1           0  0.21s           2026-05-28T16:00:56                      10
+================================================================================
+[2026-05-28T16:01:10.103+0000] {manager.py:465} INFO - Exiting gracefully upon receiving signal 15
