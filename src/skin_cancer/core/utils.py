@@ -70,6 +70,7 @@ def save_checkpoint(
 
 
 def load_checkpoint(path: str | Path, map_location: str | torch.device = "cpu") -> dict[str, Any]:
+    print(f"Loading checkpoint from {path}")
     path = Path(path)
     if not path.exists():
         raise FileNotFoundError(f"Checkpoint not found: {path}")
