@@ -1,13 +1,13 @@
 from __future__ import annotations
 
-from datetime import datetime
+from datetime import datetime, timedelta
 
 from airflow import DAG
 from airflow.operators.bash import BashOperator
+from airflow.operators.empty import EmptyOperator
 
 
 PROJECT_DIR = "/opt/airflow/project"
-CONFIG_PATH = f"{PROJECT_DIR}/configs/train_config.yaml"
 
 BASE_CMD = (
     f"cd {PROJECT_DIR} && "
@@ -15,22 +15,56 @@ BASE_CMD = (
 )
 
 
+EXPERIMENTS = [
+    {
+        "task_name": "b0_bs16_gamma1",
+        "config": f"{PROJECT_DIR}/configs/eff_b0/b0_bs16_gamma1.yaml",
+        "use_sampler": True,
+    },
+    {
+        "task_name": "b0_bs16_gamma2",
+        "config": f"{PROJECT_DIR}/configs/eff_b0/b0_bs16_gamma2.yaml",
+        "use_sampler": True,
+    },
+    {
+        "task_name": "b0_bs32_gamma2",
+        "config": f"{PROJECT_DIR}/configs/eff_b0/b0_bs32_gamma2.yaml",
+        "use_sampler": True,
+    },
+    {
+        "task_name": "b3_bs4_gamma2",
+        "config": f"{PROJECT_DIR}/configs/eff_B3/b3_bs4_gamma2.yaml",
+        "use_sampler": True,
+    },
+    {
+        "task_name": "b3_bs8_gamma2",
+        "config": f"{PROJECT_DIR}/configs/eff_B3/b3_bs8_gamma2.yaml",
+        "use_sampler": True,
+    },
+]
+
+
 with DAG(
     dag_id="skin_cancer_training_pipeline",
-    description="HAM10000 skin cancer classification training pipeline",
+    description="HAM10000 skin cancer classification multi-experiment pipeline",
     start_date=datetime(2026, 1, 1),
     schedule=None,
     catchup=False,
+    max_active_tasks=1,
     tags=["skin-cancer", "ham10000", "mlops"],
 ) as dag:
+
+    start = EmptyOperator(task_id="start")
 
     validate_data = BashOperator(
         task_id="validate_data",
         bash_command=(
             BASE_CMD
             + f"python -m skin_cancer.data.validation "
-            + f"--config {CONFIG_PATH}"
+            + f"--config {PROJECT_DIR}/configs/train_config.yaml"
         ),
+        retries=1,
+        retry_delay=timedelta(minutes=2),
     )
 
     prepare_data = BashOperator(
@@ -38,27 +72,45 @@ with DAG(
         bash_command=(
             BASE_CMD
             + f"python -m skin_cancer.data.preparation "
-            + f"--config {CONFIG_PATH}"
+            + f"--config {PROJECT_DIR}/configs/train_config.yaml"
         ),
+        retries=1,
+        retry_delay=timedelta(minutes=2),
     )
 
-    train_model = BashOperator(
-        task_id="train_model",
-        bash_command=(
-            BASE_CMD
-            + f"python -m skin_cancer.training.train "
-            + f"--config {CONFIG_PATH} "
-            + f"--use-weighted-sampler"
-        ),
-    )
+    finish = EmptyOperator(task_id="finish")
 
-    evaluate_model = BashOperator(
-        task_id="evaluate_model",
-        bash_command=(
-            BASE_CMD
-            + f"python -m skin_cancer.evaluation.evaluate "
-            + f"--config {CONFIG_PATH}"
-        ),
-    )
+    start >> validate_data >> prepare_data
 
-    validate_data >> prepare_data >> train_model >> evaluate_model
+    previous_task = prepare_data
+
+    for exp in EXPERIMENTS:
+        sampler_flag = " --use-weighted-sampler" if exp["use_sampler"] else ""
+
+        train_task = BashOperator(
+            task_id=f"train_{exp['task_name']}",
+            bash_command=(
+                BASE_CMD
+                + f"python -m skin_cancer.training.train "
+                + f"--config {exp['config']}"
+                + sampler_flag
+            ),
+            retries=1,
+            retry_delay=timedelta(minutes=2),
+        )
+
+        evaluate_task = BashOperator(
+            task_id=f"evaluate_{exp['task_name']}",
+            bash_command=(
+                BASE_CMD
+                + f"python -m skin_cancer.evaluation.evaluate "
+                + f"--config {exp['config']}"
+            ),
+            retries=1,
+            retry_delay=timedelta(minutes=2),
+        )
+
+        previous_task >> train_task >> evaluate_task
+        previous_task = evaluate_task
+
+    previous_task >> finish

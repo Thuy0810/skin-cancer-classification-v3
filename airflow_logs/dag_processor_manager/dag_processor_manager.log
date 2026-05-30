@@ -735,3 +735,30 @@ File Path                                  PID    Runtime      # DAGs    # Error
 -----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
 /opt/airflow/dags/skin_cancer_pipeline.py                           1           0  0.10s           2026-05-28T17:19:57                      10
 ================================================================================
+[2026-05-30T09:49:35.688+0000] {manager.py:483} INFO - Processing files using up to 1 processes at a time 
+[2026-05-30T09:49:35.689+0000] {manager.py:484} INFO - Process each file at most once every 30 seconds
+[2026-05-30T09:49:35.691+0000] {manager.py:485} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2026-05-30T09:49:35.691+0000] {manager.py:821} INFO - Searching for files in /opt/airflow/dags
+[2026-05-30T09:49:35.704+0000] {manager.py:824} INFO - There are 1 files in /opt/airflow/dags
+[2026-05-30T09:49:35.983+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                  PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+-----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/skin_cancer_pipeline.py                           1           0  0.21s           2026-05-30T09:49:35                      10
+================================================================================
+[2026-05-30T09:54:26.820+0000] {manager.py:465} INFO - Exiting gracefully upon receiving signal 15
+[2026-05-30T09:54:27.044+0000] {manager.py:483} INFO - Processing files using up to 1 processes at a time 
+[2026-05-30T09:54:27.044+0000] {manager.py:484} INFO - Process each file at most once every 30 seconds
+[2026-05-30T09:54:27.045+0000] {manager.py:485} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2026-05-30T09:54:27.046+0000] {manager.py:821} INFO - Searching for files in /opt/airflow/dags
+[2026-05-30T09:54:27.059+0000] {manager.py:824} INFO - There are 1 files in /opt/airflow/dags
+[2026-05-30T09:54:27.329+0000] {manager.py:997} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                  PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run               Last # of DB Queries
+-----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------  ----------------------
+/opt/airflow/dags/skin_cancer_pipeline.py                           1           0  0.20s           2026-05-30T09:54:27                      10
+================================================================================

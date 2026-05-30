@@ -6,9 +6,9 @@ paths:
   interim_dir: "data/interim"
   processed_dir: "data/processed"
   metadata_file: "data/raw/HAM10000_metadata.csv"
-  model_dir: "models"
-  report_dir: "reports"
-  best_model_path: "models/best_model.pth"
+  model_dir: "models/b0_bs32_gamma2"
+  report_dir: "reports/b0_bs32_gamma2"
+  best_model_path: "models/b0_bs32_gamma2/best_model.pth"
 
 labels:
   label_names: ["akiec", "bcc", "bkl", "df", "mel", "nv", "vasc"]
@@ -53,6 +53,7 @@ mlflow:
   enabled: true
   tracking_uri: "mlruns"
   experiment_name: "ham10000-efficientnet"
+  run_name: "b0_bs32_gamma2_sampler"
 
 augmentation:
   horizontal_flip_p: 0.5

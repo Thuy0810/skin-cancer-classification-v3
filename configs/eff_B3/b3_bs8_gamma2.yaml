@@ -6,16 +6,16 @@ paths:
   interim_dir: "data/interim"
   processed_dir: "data/processed"
   metadata_file: "data/raw/HAM10000_metadata.csv"
-  model_dir: "models"
-  report_dir: "reports"
-  best_model_path: "models/best_model.pth"
+  model_dir: "models/b3_bs8_gamma2"
+  report_dir: "reports/b3_bs8_gamma2"
+  best_model_path: "models/b3_bs8_gamma2/best_model.pth"
 
 labels:
   label_names: ["akiec", "bcc", "bkl", "df", "mel", "nv", "vasc"]
   malignant_labels: ["akiec", "bcc", "mel"]
 
 data:
-  image_size: 224
+  image_size: 300
   test_size: 0.15
   val_size: 0.15
   num_workers: 2
@@ -23,13 +23,13 @@ data:
   image_extensions: [".jpg", ".jpeg", ".png"]
 
 model:
-  name: "efficientnet_b0"
+  name: "efficientnet_b3"
   pretrained: true
   num_classes: 7
 
 training:
   epochs: 20
-  batch_size: 32
+  batch_size: 8
   mixed_precision: true
   early_stopping_patience: 5
   monitor_metric: "macro_f1"
@@ -38,7 +38,7 @@ training:
 
 optimizer:
   name: "adamw"
-  learning_rate: 0.0001
+  learning_rate: 0.00003
   weight_decay: 0.0001
 
 scheduler:
@@ -53,6 +53,7 @@ mlflow:
   enabled: true
   tracking_uri: "mlruns"
   experiment_name: "ham10000-efficientnet"
+  run_name: "b3_bs8_gamma2_sampler"
 
 augmentation:
   horizontal_flip_p: 0.5
