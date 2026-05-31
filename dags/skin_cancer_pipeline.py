@@ -19,31 +19,31 @@ EXPERIMENTS = [
     {
         "task_name": "b0_bs16_gamma1",
         "config": f"{PROJECT_DIR}/configs/eff_B0/b0_bs16_gamma1.yaml",
-        "use_sampler": False,
+        "use_sampler": True,
     },
-    {
-        "task_name": "b0_bs16_gamma2",
-        "config": f"{PROJECT_DIR}/configs/eff_B0/b0_bs16_gamma2.yaml",
-        "use_sampler": False,
-    },
+    # {
+    #     "task_name": "b0_bs16_gamma2",
+    #     "config": f"{PROJECT_DIR}/configs/eff_B0/b0_bs16_gamma2.yaml",
+    #     "use_sampler": False,
+    # },
 
-    {
-        "task_name": "b0_bs32_gamma2",
-        "config": f"{PROJECT_DIR}/configs/eff_B0/b0_bs32_gamma2.yaml",
-        "use_sampler": False,
-    },
-    
-    {
-        "task_name": "b3_bs16_gamma2",
-        "config": f"{PROJECT_DIR}/configs/eff_B3/b3_bs16_gamma2.yaml",
-        "use_sampler": False,
-    },
+    # {
+    #     "task_name": "b0_bs32_gamma2",
+    #     "config": f"{PROJECT_DIR}/configs/eff_B0/b0_bs32_gamma2.yaml",
+    #     "use_sampler": False,
+    # },
 
-    {
-        "task_name": "b3_bs8_gamma2",
-        "config": f"{PROJECT_DIR}/configs/eff_B3/b3_bs8_gamma2.yaml",
-        "use_sampler": False,
-    },
+    # {
+    #     "task_name": "b3_bs16_gamma2",
+    #     "config": f"{PROJECT_DIR}/configs/eff_B3/b3_bs16_gamma2.yaml",
+    #     "use_sampler": False,
+    # },
+
+    # {
+    #     "task_name": "b3_bs8_gamma2",
+    #     "config": f"{PROJECT_DIR}/configs/eff_B3/b3_bs8_gamma2.yaml",
+    #     "use_sampler": False,
+    # },
 ]
 
 

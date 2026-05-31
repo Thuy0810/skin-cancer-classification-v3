@@ -38,7 +38,7 @@ training:
 
 optimizer:
   name: "adamw"
-  learning_rate: 0.00005
+  learning_rate: 0.0001
   weight_decay: 0.0005
 
 scheduler:
@@ -46,14 +46,14 @@ scheduler:
 
 loss:
   name: "focal_loss"
-  gamma: 1.0
-  alpha: "balanced"
+  gamma: 2.0
+  alpha: "null"
 
 mlflow:
   enabled: true
   tracking_uri: "mlruns"
   experiment_name: "ham10000-efficientnet"
-  run_name: "b0_bs16_gamma1_lr5e5_no_sampler_wd5e4"
+  run_name: "b0_bs16_gamma1_lr0001_weighted_sampler_wd5e4"
 
 augmentation:
   horizontal_flip_p: 0.5

@@ -38,7 +38,7 @@ training:
 
 optimizer:
   name: "adamw"
-  learning_rate: 0.00003
+  learning_rate: 0.00005
   weight_decay: 0.0005
 
 scheduler:
@@ -46,7 +46,7 @@ scheduler:
 
 loss:
   name: "focal_loss"
-  gamma: 1.0
+  gamma: 2.0
   alpha: "balanced"
 
 mlflow:
