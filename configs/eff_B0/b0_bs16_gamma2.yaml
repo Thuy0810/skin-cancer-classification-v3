@@ -50,7 +50,7 @@ loss:
 
 mlflow:
   enabled: true
-  tracking_uri: "mlruns"
+  tracking_uri: "http://<server-ip>:5000"
   experiment_name: "ham10000-efficientnet"
   run_name: "b0_bs32_gamma1_lnr_0001_ep_50_no_sampler_wd5e4"
 

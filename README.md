@@ -210,7 +210,7 @@ MLflow is enabled in `configs/train_config.yaml`:
 ```yaml
 mlflow:
   enabled: true
-  tracking_uri: "mlruns"
+  tracking_uri: "http://<server-ip>:5000"
   experiment_name: "ham10000-efficientnet"
 ```
 
