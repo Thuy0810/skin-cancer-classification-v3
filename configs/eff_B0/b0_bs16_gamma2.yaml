@@ -40,7 +40,6 @@ optimizer:
   name: "adamw"
   learning_rate: 0.0001
   weight_decay: 0.0001
-
 scheduler:
   name: "cosine"
 
@@ -53,7 +52,7 @@ mlflow:
   enabled: true
   tracking_uri: "mlruns"
   experiment_name: "ham10000-efficientnet"
-  run_name: "b0_bs16_gamma2_lnr_0001_ep_50_sampler"
+  run_name: "b0_bs32_gamma1_lnr_0001_ep_50_no_sampler_wd5e4"
 
 augmentation:
   horizontal_flip_p: 0.5

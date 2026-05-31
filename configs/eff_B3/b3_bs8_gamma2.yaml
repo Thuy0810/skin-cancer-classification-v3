@@ -6,9 +6,9 @@ paths:
   interim_dir: "data/interim"
   processed_dir: "data/processed"
   metadata_file: "data/raw/HAM10000_metadata.csv"
-  model_dir: "models/b3_bs8_gamma2"
-  report_dir: "reports/b3_bs8_gamma2"
-  best_model_path: "models/b3_bs8_gamma2/best_model.pth"
+  model_dir: "models/b3_bs8_gamma1_no_sampler_wd5e4"
+  report_dir: "reports/b3_bs8_gamma1_no_sampler_wd5e4"
+  best_model_path: "models/b3_bs8_gamma1_no_sampler_wd5e4/best_model.pth"
 
 labels:
   label_names: ["akiec", "bcc", "bkl", "df", "mel", "nv", "vasc"]
@@ -28,10 +28,10 @@ model:
   num_classes: 7
 
 training:
-  epochs: 20
+  epochs: 50
   batch_size: 8
   mixed_precision: true
-  early_stopping_patience: 5
+  early_stopping_patience: 7
   monitor_metric: "macro_f1"
   device: "auto"
   save_best_only: true
@@ -39,21 +39,21 @@ training:
 optimizer:
   name: "adamw"
   learning_rate: 0.00003
-  weight_decay: 0.0001
+  weight_decay: 0.0005
 
 scheduler:
   name: "cosine"
 
 loss:
   name: "focal_loss"
-  gamma: 2.0
+  gamma: 1.0
   alpha: "balanced"
 
 mlflow:
   enabled: true
   tracking_uri: "mlruns"
   experiment_name: "ham10000-efficientnet"
-  run_name: "b3_bs8_gamma2_sampler"
+  run_name: "b3_bs8_gamma1_lr3e5_no_sampler_wd5e4"
 
 augmentation:
   horizontal_flip_p: 0.5

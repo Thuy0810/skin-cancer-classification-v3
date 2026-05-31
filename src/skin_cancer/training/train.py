@@ -53,6 +53,12 @@ def build_auto_run_name(
     return f"train_{run_index:03d}_{model_name}_{loss_name}_{sampler_name}"
 
 
+def normalize_stage_run_name(run_name: str, stage: str) -> str:
+    if run_name.startswith((f"{stage}_", "train_", "evaluate_")):
+        return run_name
+    return f"{stage}_{run_name}"
+
+
 def build_optimizer(model: torch.nn.Module, cfg: SimpleNamespace) -> torch.optim.Optimizer:
     name = cfg.optimizer.name.lower()
     if name == "adamw":
@@ -148,6 +154,8 @@ def _start_mlflow_run(
             cfg=cfg,
             use_weighted_sampler=use_weighted_sampler,
         )
+
+    run_name = normalize_stage_run_name(str(run_name), "train")
 
     mlflow.start_run(run_name=run_name)
 

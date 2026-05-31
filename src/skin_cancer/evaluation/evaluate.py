@@ -15,6 +15,12 @@ from skin_cancer.data.transforms import get_valid_transforms
 from skin_cancer.core.utils import get_device, load_checkpoint, save_json
 
 
+def normalize_stage_run_name(run_name: str, stage: str) -> str:
+    if run_name.startswith((f"{stage}_", "train_", "evaluate_")):
+        return run_name
+    return f"{stage}_{run_name}"
+
+
 @torch.no_grad()
 def predict_loader(model: torch.nn.Module, loader: DataLoader, device: torch.device) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
     y_true_batches: list[np.ndarray] = []
@@ -81,6 +87,27 @@ def main() -> None:
         report_dir / "figures" / "confusion_matrix_normalized.png",
         normalize=True,
     )
+
+    if bool(getattr(cfg.mlflow, "enabled", False)):
+        import mlflow
+
+        mlflow.set_tracking_uri(cfg.mlflow.tracking_uri)
+        mlflow.set_experiment(cfg.mlflow.experiment_name)
+
+        checkpoint_name = Path(checkpoint_path).stem
+        run_name = normalize_stage_run_name(f"{cfg.model.name}_{checkpoint_name}", "evaluate")
+
+        with mlflow.start_run(run_name=run_name):
+            mlflow.log_params(
+                {
+                    "stage": "evaluate",
+                    "model": cfg.model.name,
+                    "checkpoint": checkpoint_name,
+                    "image_size": cfg.data.image_size,
+                    "batch_size": cfg.training.batch_size,
+                }
+            )
+            mlflow.log_metrics({key: value for key, value in metrics.items() if isinstance(value, (float, int))})
 
     print("Test metrics saved.")
     print({key: value for key, value in metrics.items() if isinstance(value, (float, int))})

@@ -18,28 +18,31 @@ BASE_CMD = (
 EXPERIMENTS = [
     {
         "task_name": "b0_bs16_gamma1",
-        "config": f"{PROJECT_DIR}/configs/eff_b0/b0_bs16_gamma1.yaml",
-        "use_sampler": True,
+        "config": f"{PROJECT_DIR}/configs/eff_B0/b0_bs16_gamma1.yaml",
+        "use_sampler": False,
     },
     {
         "task_name": "b0_bs16_gamma2",
-        "config": f"{PROJECT_DIR}/configs/eff_b0/b0_bs16_gamma2.yaml",
-        "use_sampler": True,
+        "config": f"{PROJECT_DIR}/configs/eff_B0/b0_bs16_gamma2.yaml",
+        "use_sampler": False,
     },
+
     {
         "task_name": "b0_bs32_gamma2",
-        "config": f"{PROJECT_DIR}/configs/eff_b0/b0_bs32_gamma2.yaml",
-        "use_sampler": True,
+        "config": f"{PROJECT_DIR}/configs/eff_B0/b0_bs32_gamma2.yaml",
+        "use_sampler": False,
     },
+    
     {
-        "task_name": "b3_bs4_gamma2",
-        "config": f"{PROJECT_DIR}/configs/eff_B3/b3_bs4_gamma2.yaml",
-        "use_sampler": True,
+        "task_name": "b3_bs16_gamma2",
+        "config": f"{PROJECT_DIR}/configs/eff_B3/b3_bs16_gamma2.yaml",
+        "use_sampler": False,
     },
+
     {
         "task_name": "b3_bs8_gamma2",
         "config": f"{PROJECT_DIR}/configs/eff_B3/b3_bs8_gamma2.yaml",
-        "use_sampler": True,
+        "use_sampler": False,
     },
 ]
 
@@ -99,18 +102,7 @@ with DAG(
             retry_delay=timedelta(minutes=2),
         )
 
-        evaluate_task = BashOperator(
-            task_id=f"evaluate_{exp['task_name']}",
-            bash_command=(
-                BASE_CMD
-                + f"python -m skin_cancer.evaluation.evaluate "
-                + f"--config {exp['config']}"
-            ),
-            retries=1,
-            retry_delay=timedelta(minutes=2),
-        )
-
-        previous_task >> train_task >> evaluate_task
-        previous_task = evaluate_task
+        previous_task >> train_task
+        previous_task = train_task
 
     previous_task >> finish
