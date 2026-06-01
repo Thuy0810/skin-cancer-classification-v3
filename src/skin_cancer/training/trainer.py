@@ -105,7 +105,6 @@ def train_model(
 ) -> dict[str, Any]:
     best_metric = -float("inf")
     best_epoch = -1
-    epochs_without_improvement = 0
     scaler = torch.cuda.amp.GradScaler(enabled=mixed_precision and device.type == "cuda")
     history: list[dict[str, float]] = []
 
@@ -163,7 +162,6 @@ def train_model(
         if current_metric > best_metric:
             best_metric = current_metric
             best_epoch = epoch
-            epochs_without_improvement = 0
             save_checkpoint(
                 checkpoint_path,
                 model=model,
@@ -174,10 +172,5 @@ def train_model(
                 config=config_dict,
             )
             print(f"Saved new best model to {checkpoint_path} ({monitor_metric}={best_metric:.4f})")
-        else:
-            epochs_without_improvement += 1
-            if epochs_without_improvement >= early_stopping_patience:
-                print(f"Early stopping at epoch {epoch}.")
-                break
 
     return {"best_metric": best_metric, "best_epoch": best_epoch, "history": history}

@@ -51,16 +51,15 @@ loss:
 
 mlflow:
   enabled: true
-  tracking_uri: "http://<server-ip>:5000"
+  tracking_uri: "mlruns"
   experiment_name: "ham10000-efficientnet"
   run_name: "b0_bs32_gamma1_lr1e4_no_sampler_wd5e4"
 
 augmentation:
   horizontal_flip_p: 0.5
-  vertical_flip_p: 0.2
-  rotate_limit: 20
-  brightness_contrast_p: 0.4
-  shift_scale_rotate_p: 0.4
-
+  vertical_flip_p: 0.3
+  rotate_limit: 30
+  brightness_contrast_p: 0.5
+  shift_scale_rotate_p: 0.5
 inference:
   top_k: 3

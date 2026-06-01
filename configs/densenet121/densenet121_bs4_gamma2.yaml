@@ -6,9 +6,9 @@ paths:
   interim_dir: "data/interim"
   processed_dir: "data/processed"
   metadata_file: "data/raw/HAM10000_metadata.csv"
-  model_dir: "models/b3_bs8_gamma1_no_sampler_wd5e4"
-  report_dir: "reports/b3_bs8_gamma1_no_sampler_wd5e4"
-  best_model_path: "models/b3_bs8_gamma1_no_sampler_wd5e4/best_model.pth"
+  model_dir: "models/densenet121_bs4_gamma2_no_sampler_wd5e4"
+  report_dir: "reports/densenet121_bs4_gamma2_no_sampler_wd5e4"
+  best_model_path: "models/densenet121_bs4_gamma2_no_sampler_wd5e4/best_model.pth"
 
 labels:
   label_names: ["akiec", "bcc", "bkl", "df", "mel", "nv", "vasc"]
@@ -23,7 +23,7 @@ data:
   image_extensions: [".jpg", ".jpeg", ".png"]
 
 model:
-  name: "efficientnet_b3"
+  name: "densenet121"
   pretrained: true
   num_classes: 7
 
@@ -51,16 +51,16 @@ loss:
 
 mlflow:
   enabled: true
-  tracking_uri: "http://<server-ip>:5000"
-  experiment_name: "ham10000-efficientnet"
-  run_name: "b3_bs8_gamma1_lr3e5_no_sampler_wd5e4"
+  tracking_uri: "mlruns"
+  experiment_name: "ham10000-densenet"
+  run_name: "densenet121_bs4_gamma2_lr3e5_no_sampler_wd5e4"
 
 augmentation:
   horizontal_flip_p: 0.5
-  vertical_flip_p: 0.2
-  rotate_limit: 20
-  brightness_contrast_p: 0.4
-  shift_scale_rotate_p: 0.4
+  vertical_flip_p: 0.3
+  rotate_limit: 30
+  brightness_contrast_p: 0.5
+  shift_scale_rotate_p: 0.5
 
 inference:
   top_k: 3

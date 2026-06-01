@@ -28,7 +28,7 @@ model:
   num_classes: 7
 
 training:
-  epochs: 50
+  epochs: 100
   batch_size: 16
   mixed_precision: true
   early_stopping_patience: 7
@@ -46,14 +46,14 @@ scheduler:
 
 loss:
   name: "focal_loss"
-  gamma: 2.0
+  gamma: 1.0
   alpha: "null"
 
 mlflow:
   enabled: true
-  tracking_uri: "http://<server-ip>:5000"
+  tracking_uri: "mlruns"
   experiment_name: "ham10000-efficientnet"
-  run_name: "b0_bs16_gamma1_lr0001_weighted_sampler_wd5e4"
+  run_name: "b0_bs16_gamma1_lr0001_no_use_sampler_wd5e4_ep100_al"
 
 augmentation:
   horizontal_flip_p: 0.5
