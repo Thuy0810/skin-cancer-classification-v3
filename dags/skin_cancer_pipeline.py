@@ -19,7 +19,7 @@ EXPERIMENTS = [
     {
         "task_name": "densenet121_bs4_gamma2",
         "config": f"{PROJECT_DIR}/configs/densenet121/densenet121_bs4_gamma2.yaml",
-        "use_sampler": True,
+        "use_sampler": False,
     },
     # {
     #     "task_name": "densenet121_bs8_gamma2",
