@@ -17,6 +17,8 @@ data/interim/*
 data/processed/*
 models/*
 mlruns/*
+mlruns.rar
+*.rar
 reports/figures/*
 reports/metrics/*
 airflow_logs/*
