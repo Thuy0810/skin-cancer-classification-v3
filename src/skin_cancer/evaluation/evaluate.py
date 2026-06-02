@@ -9,9 +9,9 @@ from tqdm import tqdm
 
 from skin_cancer.core.config import config_arg_parser, load_config
 from skin_cancer.data.dataset import SkinLesionDataset, load_split_dataframe
-from skin_cancer.evaluation.metrics import compute_classification_metrics, plot_confusion_matrix
-from skin_cancer.modeling.model import load_model_from_checkpoint
 from skin_cancer.data.transforms import get_valid_transforms
+from skin_cancer.evaluation.metrics import compute_classification_metrics, save_confusion_matrix_artifacts
+from skin_cancer.modeling.model import load_model_from_checkpoint
 from skin_cancer.core.utils import get_device, load_checkpoint, save_json
 
 
@@ -73,19 +73,12 @@ def main() -> None:
 
     report_dir = Path(cfg.paths.report_dir)
     save_json(metrics, report_dir / "metrics" / "test_metrics.json")
-    plot_confusion_matrix(
+    save_confusion_matrix_artifacts(
         y_true,
         y_pred,
         list(cfg.labels.label_names),
-        report_dir / "figures" / "confusion_matrix.png",
-        normalize=False,
-    )
-    plot_confusion_matrix(
-        y_true,
-        y_pred,
-        list(cfg.labels.label_names),
-        report_dir / "figures" / "confusion_matrix_normalized.png",
-        normalize=True,
+        report_dir / "figures",
+        base_name="confusion_matrix",
     )
 
     if bool(getattr(cfg.mlflow, "enabled", False)):

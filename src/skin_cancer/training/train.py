@@ -197,7 +197,7 @@ def _start_mlflow_run(
 
 def run_training(
     cfg: SimpleNamespace | dict[str, Any],
-    use_weighted_sampler: bool = False,
+    use_weighted_sampler: bool | None = None,
     enable_mlflow: bool | None = None,
 ) -> dict[str, Any]:
     """Run the full training pipeline.
@@ -214,6 +214,9 @@ def run_training(
     if enable_mlflow is not None:
         cfg.mlflow.enabled = bool(enable_mlflow)
         cfg_dict["mlflow"]["enabled"] = bool(enable_mlflow)
+
+    if use_weighted_sampler is None:
+        use_weighted_sampler = bool(getattr(cfg.training, "use_weighted_sampler", True))
 
     set_seed(int(cfg.seed))
     device = get_device(cfg.training.device)
@@ -262,6 +265,7 @@ def run_training(
             label_to_id=label_to_id,
             checkpoint_path=cfg.paths.best_model_path,
             config_dict=cfg_dict,
+            report_dir=cfg.paths.report_dir,
             monitor_metric=cfg.training.monitor_metric,
             mixed_precision=bool(cfg.training.mixed_precision),
             early_stopping_patience=int(cfg.training.early_stopping_patience),
@@ -283,11 +287,20 @@ def run_training(
 
 def main() -> None:
     parser = config_arg_parser("Train EfficientNet on HAM10000.")
-    parser.add_argument(
+    sampler_group = parser.add_mutually_exclusive_group()
+    sampler_group.add_argument(
         "--use-weighted-sampler",
+        dest="use_weighted_sampler",
         action="store_true",
         help="Oversample minority classes during training.",
     )
+    sampler_group.add_argument(
+        "--no-weighted-sampler",
+        dest="use_weighted_sampler",
+        action="store_false",
+        help="Disable weighted sampling during training.",
+    )
+    parser.set_defaults(use_weighted_sampler=None)
     parser.add_argument(
         "--no-mlflow",
         action="store_true",

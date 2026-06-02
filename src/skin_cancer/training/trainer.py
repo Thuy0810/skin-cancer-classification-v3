@@ -11,7 +11,7 @@ from torch.utils.data import DataLoader
 from tqdm import tqdm
 
 from skin_cancer.evaluation.metrics import compute_classification_metrics
-from skin_cancer.core.utils import save_checkpoint
+from skin_cancer.core.utils import save_checkpoint, save_json
 
 
 @dataclass
@@ -98,6 +98,7 @@ def train_model(
     label_to_id: dict[str, int],
     checkpoint_path: str | Path,
     config_dict: dict[str, Any],
+    report_dir: str | Path | None = None,
     monitor_metric: str = "macro_f1",
     mixed_precision: bool = True,
     early_stopping_patience: int = 5,
@@ -107,6 +108,7 @@ def train_model(
     best_epoch = -1
     scaler = torch.cuda.amp.GradScaler(enabled=mixed_precision and device.type == "cuda")
     history: list[dict[str, float]] = []
+    best_val_output: EpochOutput | None = None
 
     for epoch in range(1, epochs + 1):
         train_output = run_one_epoch(
@@ -162,6 +164,7 @@ def train_model(
         if current_metric > best_metric:
             best_metric = current_metric
             best_epoch = epoch
+            best_val_output = val_output
             save_checkpoint(
                 checkpoint_path,
                 model=model,
@@ -172,5 +175,24 @@ def train_model(
                 config=config_dict,
             )
             print(f"Saved new best model to {checkpoint_path} ({monitor_metric}={best_metric:.4f})")
+
+    if report_dir is not None and best_val_output is not None:
+        report_dir = Path(report_dir)
+        metrics_dir = report_dir / "metrics"
+        figures_dir = report_dir / "figures"
+        metrics_dir.mkdir(parents=True, exist_ok=True)
+        figures_dir.mkdir(parents=True, exist_ok=True)
+
+        save_json(best_val_output.metrics, metrics_dir / "validation_metrics.json")
+
+        from skin_cancer.evaluation.metrics import save_confusion_matrix_artifacts
+
+        save_confusion_matrix_artifacts(
+            best_val_output.y_true,
+            best_val_output.y_pred,
+            label_names,
+            figures_dir,
+            base_name="validation_confusion_matrix",
+        )
 
     return {"best_metric": best_metric, "best_epoch": best_epoch, "history": history}

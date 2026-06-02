@@ -18,11 +18,20 @@ def parse_args() -> argparse.Namespace:
         default="configs/train_config.yaml",
         help="Base config path.",
     )
-    parser.add_argument(
+    sampler_group = parser.add_mutually_exclusive_group()
+    sampler_group.add_argument(
         "--use-weighted-sampler",
+        dest="use_weighted_sampler",
         action="store_true",
         help="Use WeightedRandomSampler for all experiments.",
     )
+    sampler_group.add_argument(
+        "--no-weighted-sampler",
+        dest="use_weighted_sampler",
+        action="store_false",
+        help="Disable WeightedRandomSampler for all experiments.",
+    )
+    parser.set_defaults(use_weighted_sampler=None)
     return parser.parse_args()
 
 

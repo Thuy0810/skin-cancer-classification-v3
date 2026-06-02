@@ -35,6 +35,15 @@ def compute_classification_metrics(
         zero_division=0,
         output_dict=True,
     )
+    cm = confusion_matrix(y_true, y_pred, labels=np.arange(len(label_names)))
+    cm_normalized = cm.astype(float)
+    row_sums = cm_normalized.sum(axis=1, keepdims=True)
+    cm_normalized = np.divide(
+        cm_normalized,
+        row_sums,
+        out=np.zeros_like(cm_normalized),
+        where=row_sums != 0,
+    )
 
     metrics: dict[str, Any] = {
         "accuracy": float(accuracy),
@@ -45,6 +54,8 @@ def compute_classification_metrics(
         "weighted_recall": float(recall_weighted),
         "weighted_f1": float(f1_weighted),
         "classification_report": report,
+        "confusion_matrix": cm.tolist(),
+        "confusion_matrix_normalized": cm_normalized.tolist(),
     }
 
     if y_prob is not None:
@@ -61,6 +72,30 @@ def compute_classification_metrics(
             metrics[f"f1_{label}"] = float(report[label]["f1-score"])
 
     return metrics
+
+
+def save_confusion_matrix_artifacts(
+    y_true: np.ndarray,
+    y_pred: np.ndarray,
+    label_names: list[str],
+    output_dir: str | Path,
+    base_name: str = "confusion_matrix",
+) -> None:
+    output_dir = Path(output_dir)
+    plot_confusion_matrix(
+        y_true,
+        y_pred,
+        label_names,
+        output_dir / f"{base_name}.png",
+        normalize=False,
+    )
+    plot_confusion_matrix(
+        y_true,
+        y_pred,
+        label_names,
+        output_dir / f"{base_name}_normalized.png",
+        normalize=True,
+    )
 
 
 def plot_confusion_matrix(
