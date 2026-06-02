@@ -1,0 +1,8 @@
+"image_id","true_label","class_name","confidence_percent","image_path"
+"ISIC_0024450","akiec","akiec","99.99","D:\Hoc\skin-cancer-classification-v3\data\raw\HAM10000_images_part_1\ISIC_0024450.jpg"
+"ISIC_0024331","bcc","bcc","99.78","D:\Hoc\skin-cancer-classification-v3\data\raw\HAM10000_images_part_1\ISIC_0024331.jpg"
+"ISIC_0024381","bkl","bkl","100.00","D:\Hoc\skin-cancer-classification-v3\data\raw\HAM10000_images_part_1\ISIC_0024381.jpg"
+"ISIC_0024330","df","df","88.38","D:\Hoc\skin-cancer-classification-v3\data\raw\HAM10000_images_part_1\ISIC_0024330.jpg"
+"ISIC_0024525","mel","mel","68.14","D:\Hoc\skin-cancer-classification-v3\data\raw\HAM10000_images_part_1\ISIC_0024525.jpg"
+"ISIC_0024311","nv","nv","70.71","D:\Hoc\skin-cancer-classification-v3\data\raw\HAM10000_images_part_1\ISIC_0024311.jpg"
+"ISIC_0024747","vasc","vasc","99.97","D:\Hoc\skin-cancer-classification-v3\data\raw\HAM10000_images_part_1\ISIC_0024747.jpg"
