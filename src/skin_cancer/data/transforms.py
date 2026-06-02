@@ -15,7 +15,6 @@ def get_train_transforms(
     brightness_contrast_p: float = 0.4,
     shift_scale_rotate_p: float = 0.4,
 ) -> A.Compose:
-    """Augmentations used only for training."""
     return A.Compose(
         [
             A.Resize(height=image_size, width=image_size),
@@ -37,7 +36,6 @@ def get_train_transforms(
 
 
 def get_valid_transforms(image_size: int) -> A.Compose:
-    """Deterministic transforms for validation, test and inference."""
     return A.Compose(
         [
             A.Resize(height=image_size, width=image_size),

@@ -14,7 +14,6 @@ from skin_cancer.core.utils import get_device, load_checkpoint
 
 
 class GradCAM:
-    """Minimal Grad-CAM implementation for CNN classifiers."""
 
     def __init__(self, model: nn.Module, target_layer: nn.Module) -> None:
         self.model = model

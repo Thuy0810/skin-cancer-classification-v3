@@ -11,7 +11,6 @@ from skin_cancer.core.utils import ensure_dir, save_json
 
 
 def clean_metadata(df: pd.DataFrame) -> pd.DataFrame:
-    """Basic metadata cleaning for HAM10000."""
     df = df.copy()
     df["image_id"] = df["image_id"].astype(str)
     df["dx"] = df["dx"].astype(str).str.lower().str.strip()
@@ -57,7 +56,6 @@ def stratified_split(
     val_size: float,
     random_state: int,
 ) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
-    """Create train/val/test split while preserving class distribution."""
     train_val_df, test_df = train_test_split(
         df,
         test_size=test_size,

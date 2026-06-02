@@ -53,7 +53,7 @@ mlflow:
   enabled: true
   tracking_uri: "mlruns"
   experiment_name: "ham10000-densenet"
-  run_name: "densenet121_bs4_gamma2_lr3e5_no_sampler_wd5e4"
+  run_name: "densenet121_bs4_gamma2_lr5e5_no_sampler_wd5e4"
 
 augmentation:
   horizontal_flip_p: 0.5

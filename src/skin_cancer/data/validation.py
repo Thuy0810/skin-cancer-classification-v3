@@ -13,7 +13,6 @@ REQUIRED_COLUMNS = {"image_id", "dx", "age", "sex", "localization"}
 
 
 def build_image_index(raw_dir: str | Path, extensions: list[str]) -> dict[str, Path]:
-    """Index images by stem, e.g. ISIC_0024306 -> path."""
     raw_path = Path(raw_dir)
     if not raw_path.exists():
         raise FileNotFoundError(f"Raw data directory not found: {raw_path}")
@@ -45,7 +44,6 @@ def validate_image_paths(df: pd.DataFrame, image_index: dict[str, Path]) -> tupl
 
 
 def validate_corrupted_images(paths: list[Path], max_images: int | None = None) -> list[str]:
-    """Try reading images with OpenCV and return paths that fail."""
     corrupted: list[str] = []
     subset = paths if max_images is None else paths[:max_images]
     for path in tqdm(subset, desc="Checking images", leave=False):

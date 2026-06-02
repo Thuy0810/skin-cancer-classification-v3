@@ -10,7 +10,6 @@ from torch.utils.data import Dataset
 
 
 class SkinLesionDataset(Dataset):
-    """PyTorch Dataset for HAM10000 skin lesion images."""
 
     def __init__(self, dataframe: pd.DataFrame, transform: Any | None = None) -> None:
         required = {"image_path", "label"}
